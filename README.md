@@ -16,6 +16,8 @@ Geforce NOW client has logic to check if you are running on an AMD GPU, if you a
 
 **Note:** Your Anti-Virus might delete one or more files, this is due to the project using injection which is the same technique malware uses. The code is quite small and you can look through it and even compile it yourself.
 
+![img](./images/screenshot.png)
+
 ## Compiling it yourself
 
 If you wish to compile it yourself, have cmake and Visual Studio 2022 installed. Then simply run these commands:
