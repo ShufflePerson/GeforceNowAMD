@@ -9,7 +9,7 @@ Unlocks 240FPS option on AMD GPUs inside Geforce Now
 Geforce NOW client has logic to check if you are running on an AMD GPU, if you are, it disables some options like the capability to run at 240 FPS. `GeforceNowAMD` simply disables that check.
 
 ## How to use
-1. Download the latest release from the [https://github.com/ShufflePerson/GeforceNowAMD/releases](Releases)
+1. Download the latest release from the [Releases](https://github.com/ShufflePerson/GeforceNowAMD/releases)
 2. Extract the zip
 3. Run `launcher.exe`
 4. Run Geforce Now
