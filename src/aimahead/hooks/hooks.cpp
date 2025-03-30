@@ -39,8 +39,13 @@ void hooks::init_hooks() {
 	uintptr_t bifrost_address = get_module_base_checked("Bifrost2.dll");
 	if (bifrost_address == 0x0) return;
 
-	uintptr_t shouldRenderDebugOverlay_address = geronimo_address + offsets::SHOULD_RENDER_DEBUG_OVERLAY;
-	uintptr_t platformSupportsFpsAddress = geronimo_address + offsets::PLATFORM_SUPPORTS_FRAME_RATE;
+	const char* debugOverlayExportName = "?shouldRenderDebugOverlay@SDLWindow@@AEBA_NXZ";
+	const char* platformSupportsFPSExportName = "?platformSupportsFrameRate@@YA_NGW4GraphicsContextType@@W4DecoderType@@_N@Z";
+
+	HINSTANCE Geronimo = LoadLibrary("Geronimo.dll");
+	
+	uintptr_t shouldRenderDebugOverlay_address = (uintptr_t)GetProcAddress(Geronimo, debugOverlayExportName);
+	uintptr_t platformSupportsFpsAddress = (uintptr_t)GetProcAddress(Geronimo, platformSupportsFPSExportName);
 
 	install_hook_and_log((void*)shouldRenderDebugOverlay_address, &hooks::shouldRenderDebugOverlay_callback, 16, "SDLWindow::shouldRenderDebugOverlay", set_shouldRenderDebugOverlayHook);
 	install_hook_and_log((void*)platformSupportsFpsAddress, &hooks::onPlatformSupportsFps_callback, 15, "Geronimo::platformSupportsFrameRate", set_onPlatformSupportsFpsHook);
