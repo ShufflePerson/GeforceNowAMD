@@ -76,9 +76,4 @@ set_target_properties(GFNAmd PROPERTIES OUTPUT_NAME "GFNAmd")
 
 set_property(GLOBAL PROPERTY CMAKE_MSVC_ parallel TRUE)
 
-install(TARGETS GFNAmd
-    RUNTIME DESTINATION bin
-)
-
-
 message(STATUS "CMake configuration finished.")
