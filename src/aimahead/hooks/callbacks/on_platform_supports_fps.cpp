@@ -2,7 +2,7 @@
 
 
 
-hooks::IHook g_onPaintHook;
+hooks::IHook g_platformSupportsFpsHook;
 
 
 struct CFrameContext {
@@ -15,8 +15,8 @@ bool __fastcall hooks::onPlatformSupportsFps_callback(void* a1, void* a2, void* 
 }
 
 void hooks::set_onPlatformSupportsFpsHook(IHook m_newHook) {
-	g_onPaintHook = m_newHook;
+	g_platformSupportsFpsHook = m_newHook;
 }
 hooks::IHook hooks::get_OnPlatformSupportsFpsHook() {
-	return g_onPaintHook;
+	return g_platformSupportsFpsHook;
 }
